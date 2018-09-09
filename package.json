@@ -1,0 +1,28 @@
+{
+  "name": "@funcmatic/simple-s3",
+  "version": "0.0.1",
+  "description": "Promise-based version of a few basic functions of AWS S3 javascript library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Daniel Jhin Yoo <danieljyoo@gmail.com> (https://github.com/danieljyoo)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getfuncmatic/simple-s3.git"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "is-stream": "^1.1.0",
+    "mime-types": "^2.1.20",
+    "s3-upload-stream": "^1.0.7"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.311.0",
+    "jest": "^21.2.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
