@@ -58,10 +58,8 @@ describe('Basic S3 Operations', () => {
     expect(res).toMatchObject({
       ETag: expect.anything()
     })
-    console.log("STREAMRES", res)
 
     var download = await s3.get(TESTSTREAMBINKEY, { stream: true }) 
-    console.log("download", download)
     download.pipe(fs.createWriteStream(path.join(__dirname, 'download.test.jpg')))
 
   }, 5 * 60 * 1000)

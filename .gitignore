@@ -1,3 +1,6 @@
+# Test assets
+test/*.jpg
+
 # Logs
 logs
 *.log
