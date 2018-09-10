@@ -1,7 +1,7 @@
 {
   "name": "@funcmatic/simple-s3",
   "version": "0.0.1",
-  "description": "Promise-based version of a few basic functions of AWS S3 javascript library.",
+  "description": "Promise-based asyc/await version of a few basic functions of AWS S3 javascript library.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
