@@ -8,6 +8,7 @@ const util = require('util')
 
 const TESTBUCKET = "test.funcmatic.com"
 const TESTKEY = "s3-plugin-funcmatic/test.json"
+const TESTCOPYKEY = "s3-plugin-funcmatic/copy-test.json"
 const TESTMIMETYPE = "application/json"
 
 const TESTBINKEY = 's3-plugin-funcmatic/image.test.jpg'
@@ -43,6 +44,17 @@ describe('Basic S3 Operations', () => {
       keys: [ TESTKEY ]
     })
   })
+  it ('should copy a JSON object', async () => {
+    var jsonstr = JSON.stringify({ hello: "world" })
+    await s3.put(TESTKEY, jsonstr)
+    var res = await s3.copy(TESTKEY, TESTCOPYKEY)
+    expect(res).toMatchObject({
+      CopyObjectResult: {
+        ETag: expect.anything()
+      }
+    })
+    await s3.delete([ TESTKEY, TESTCOPYKEY ])
+  }),
   it ('should put and get a binary file (image)', async () => {
     var img = fs.readFileSync(TESTBINFILE)
     var res = await s3.put(TESTBINKEY, img)
